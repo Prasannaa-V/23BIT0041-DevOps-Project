@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  graphite:
+    image: graphiteapp/graphite-statsd
+    container_name: graphite
+    restart: unless-stopped
+    ports:
+      - "80:80"       # Graphite web UI (change host port if 80 is taken, e.g. "8080:80")
+      - "2003-2004:2003-2004"  # Carbon plaintext + pickle receivers
+      - "2023-2024:2023-2024"  # Carbon cache query ports
+      - "8125:8125/udp"        # StatsD
+      - "8126:8126"             # StatsD admin
+    volumes:
+      - graphite-storage:/opt/graphite/storage
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"   # Grafana web UI -> http://localhost:3000 (admin/admin)
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    depends_on:
+      - graphite
+
+volumes:
+  graphite-storage:
+  grafana-storage:
