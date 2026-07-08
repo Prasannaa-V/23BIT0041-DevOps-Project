@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: abc-website
-          image: yourdockerhubusername/abc-technologies-website:latest
+          image: Prasannaa-V/abc-technologies-website:latest
           ports:
             - containerPort: 80
           resources:
