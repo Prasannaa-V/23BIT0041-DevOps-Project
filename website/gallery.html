@@ -1,43 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery - ABC Technologies</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gallery — A look inside ABC Technologies offices, events, hackathons, and community activities.">
+  <title>Gallery — ABC Technologies</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header>
+
+<header id="site-header">
   <div class="logo">ABC Technologies</div>
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="careers.html">Careers</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="index.html" id="nav-home">Home</a></li>
+      <li><a href="about.html" id="nav-about">About Us</a></li>
+      <li><a href="services.html" id="nav-services">Services</a></li>
+      <li><a href="careers.html" id="nav-careers">Careers</a></li>
+      <li><a href="gallery.html" id="nav-gallery">Gallery</a></li>
+      <li><a href="contact.html" id="nav-contact">Contact Us</a></li>
     </ul>
   </nav>
 </header>
 
-<section class="hero">
-  <h1>Gallery</h1>
-  <p>A look inside our offices, events, and team.</p>
+<section class="page-hero">
+  <div class="section-label">Our World</div>
+  <h1><span class="gradient-text">Gallery</span></h1>
+  <p>A look inside our offices, events, hackathons, and community activities.</p>
 </section>
 
-<main>
-  <div class="gallery-grid">
-    <div>Office - Chennai</div>
-    <div>Team Offsite 2025</div>
-    <div>Hackathon Winners</div>
-    <div>Client Summit</div>
-    <div>New Campus Launch</div>
-    <div>Community Day</div>
-  </div>
-</main>
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Life at ABC</div>
+    <h2 class="section-title">Moments That Define Us</h2>
+    <div class="gallery-grid" id="gallery-grid">
 
-<footer>&copy; 2026 ABC Technologies. All rights reserved.</footer>
+      <div class="gallery-item">
+        <img src="images/gallery_office_chennai.png" alt="ABC Technologies Office — Chennai" loading="lazy">
+        <div class="gallery-overlay"><span>🏢 Office — Chennai</span></div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/gallery_team_offsite.png" alt="Team Offsite 2025" loading="lazy">
+        <div class="gallery-overlay"><span>🌿 Team Offsite 2025</span></div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/gallery_hackathon.png" alt="Hackathon Winners" loading="lazy">
+        <div class="gallery-overlay"><span>🏆 Hackathon Winners</span></div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/gallery_client_summit.png" alt="Client Summit" loading="lazy">
+        <div class="gallery-overlay"><span>📣 Client Summit</span></div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/gallery_new_campus.png" alt="New Campus Launch" loading="lazy">
+        <div class="gallery-overlay"><span>🎉 New Campus Launch</span></div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/gallery_community_day.png" alt="Community Day CSR" loading="lazy">
+        <div class="gallery-overlay"><span>❤️ Community Day</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">ABC Technologies</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="careers.html">Careers</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-copy">&copy; 2026 ABC Technologies. All rights reserved.</div>
+</footer>
+
 <script src="js/main.js"></script>
 </body>
 </html>

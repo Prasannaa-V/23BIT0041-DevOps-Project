@@ -1,41 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Careers - ABC Technologies</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join ABC Technologies — open positions in DevOps, cloud engineering, full-stack development, and site reliability.">
+  <title>Careers — ABC Technologies</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header>
+
+<header id="site-header">
   <div class="logo">ABC Technologies</div>
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="careers.html">Careers</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="index.html" id="nav-home">Home</a></li>
+      <li><a href="about.html" id="nav-about">About Us</a></li>
+      <li><a href="services.html" id="nav-services">Services</a></li>
+      <li><a href="careers.html" id="nav-careers">Careers</a></li>
+      <li><a href="gallery.html" id="nav-gallery">Gallery</a></li>
+      <li><a href="contact.html" id="nav-contact">Contact Us</a></li>
     </ul>
   </nav>
 </header>
 
-<section class="hero">
-  <h1>Careers</h1>
-  <p>Join a team that builds technology that matters.</p>
+<section class="page-hero">
+  <div class="section-label">Join Our Team</div>
+  <h1><span class="gradient-text">Careers</span></h1>
+  <p>Build technology that matters — with a team that values craft, collaboration, and continuous learning.</p>
 </section>
 
-<main>
-  <h2>Open Positions</h2>
-  <div class="card-grid">
-    <div class="card"><h3>DevOps Engineer</h3><p>Bengaluru &middot; Full-time &middot; Manage CI/CD and Kubernetes infrastructure.</p></div>
-    <div class="card"><h3>Full Stack Developer</h3><p>Chennai &middot; Full-time &middot; React, Node.js, and cloud-native apps.</p></div>
-    <div class="card"><h3>Site Reliability Engineer</h3><p>Remote &middot; Full-time &middot; Monitoring, alerting, incident response.</p></div>
+<!-- Perks -->
+<section class="section" style="padding-bottom: 3rem;">
+  <div class="section-inner">
+    <div class="section-label">Why Work Here</div>
+    <h2 class="section-title">Life at ABC Technologies</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🌱</div>
+        <h3>Continuous Learning</h3>
+        <p>Annual learning budget, paid certifications (AWS, GCP, CKA), and internal tech talks every fortnight.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌍</div>
+        <h3>Global Mobility</h3>
+        <p>Opportunities to work across our Chennai, Bengaluru, Singapore, and London offices.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚖️</div>
+        <h3>Work-Life Balance</h3>
+        <p>Flexible working hours, remote-first options, and unlimited casual leave for senior engineers.</p>
+      </div>
+    </div>
   </div>
-</main>
+</section>
 
-<footer>&copy; 2026 ABC Technologies. All rights reserved.</footer>
+<!-- Job Listings -->
+<section class="section" style="padding-top: 2rem;">
+  <div class="section-inner">
+    <div class="section-label">Open Positions</div>
+    <h2 class="section-title">Current Openings</h2>
+    <div id="jobs-list" style="display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem;">
+
+      <div class="job-card">
+        <div class="job-info">
+          <h3>Senior DevOps Engineer</h3>
+          <div class="job-badges">
+            <span class="badge badge-location">📍 Bengaluru</span>
+            <span class="badge badge-type">Full-time</span>
+            <span class="badge badge-dept">Engineering</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem;">Manage CI/CD pipelines, Kubernetes clusters, and infrastructure-as-code across multi-cloud environments.</p>
+        </div>
+        <a href="contact.html" class="btn-apply">Apply Now</a>
+      </div>
+
+      <div class="job-card">
+        <div class="job-info">
+          <h3>Full Stack Developer (React + Node.js)</h3>
+          <div class="job-badges">
+            <span class="badge badge-location">📍 Chennai</span>
+            <span class="badge badge-type">Full-time</span>
+            <span class="badge badge-dept">Engineering</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem;">Build modern cloud-native applications with React frontends and Node.js microservices on AWS.</p>
+        </div>
+        <a href="contact.html" class="btn-apply">Apply Now</a>
+      </div>
+
+      <div class="job-card">
+        <div class="job-info">
+          <h3>Site Reliability Engineer</h3>
+          <div class="job-badges">
+            <span class="badge badge-location">📍 Remote</span>
+            <span class="badge badge-type">Full-time</span>
+            <span class="badge badge-dept">SRE</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem;">Own monitoring, alerting, incident response, and SLO management across 50+ production services.</p>
+        </div>
+        <a href="contact.html" class="btn-apply">Apply Now</a>
+      </div>
+
+      <div class="job-card">
+        <div class="job-info">
+          <h3>Cloud Solutions Architect</h3>
+          <div class="job-badges">
+            <span class="badge badge-location">📍 Hyderabad</span>
+            <span class="badge badge-type">Full-time</span>
+            <span class="badge badge-dept">Architecture</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem;">Design enterprise cloud architectures on AWS/Azure; lead client workshops and solution documentation.</p>
+        </div>
+        <a href="contact.html" class="btn-apply">Apply Now</a>
+      </div>
+
+      <div class="job-card">
+        <div class="job-info">
+          <h3>Data Engineer</h3>
+          <div class="job-badges">
+            <span class="badge badge-location">📍 Bengaluru / Remote</span>
+            <span class="badge badge-type">Full-time</span>
+            <span class="badge badge-dept">Data</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem;">Build and maintain ETL pipelines, data lakes on AWS S3, and Spark-based analytics workflows.</p>
+        </div>
+        <a href="contact.html" class="btn-apply">Apply Now</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">ABC Technologies</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="careers.html">Careers</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-copy">&copy; 2026 ABC Technologies. All rights reserved.</div>
+</footer>
+
 <script src="js/main.js"></script>
 </body>
 </html>

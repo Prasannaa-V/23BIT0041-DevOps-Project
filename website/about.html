@@ -1,42 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us - ABC Technologies</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about ABC Technologies — our story, mission, vision, values, and 20 years of engineering excellence.">
+  <title>About Us — ABC Technologies</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header>
+
+<header id="site-header">
   <div class="logo">ABC Technologies</div>
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="careers.html">Careers</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="index.html" id="nav-home">Home</a></li>
+      <li><a href="about.html" id="nav-about">About Us</a></li>
+      <li><a href="services.html" id="nav-services">Services</a></li>
+      <li><a href="careers.html" id="nav-careers">Careers</a></li>
+      <li><a href="gallery.html" id="nav-gallery">Gallery</a></li>
+      <li><a href="contact.html" id="nav-contact">Contact Us</a></li>
     </ul>
   </nav>
 </header>
 
-<section class="hero">
-  <h1>About Us</h1>
+<section class="page-hero">
+  <div class="section-label">Our Company</div>
+  <h1><span class="gradient-text">About Us</span></h1>
   <p>Two decades of engineering excellence and client trust.</p>
 </section>
 
-<main>
-  <h2>Our Story</h2>
-  <p>Founded in 2005, ABC Technologies has grown into a trusted enterprise IT partner, serving clients across finance, healthcare, and retail sectors with reliable, scalable software solutions.</p>
-  <div class="card-grid">
-    <div class="card"><h3>Mission</h3><p>Deliver dependable technology that helps businesses grow.</p></div>
-    <div class="card"><h3>Vision</h3><p>Be the most trusted technology partner for enterprises globally.</p></div>
-    <div class="card"><h3>Values</h3><p>Integrity, innovation, and customer-first engineering.</p></div>
-  </div>
-</main>
+<!-- Story Section -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Our Journey</div>
+    <h2 class="section-title">Built on Trust, Driven by Innovation</h2>
+    <p class="section-desc">Founded in 2005, ABC Technologies has grown into a trusted enterprise IT partner serving clients across finance, healthcare, and retail — with reliable, scalable software solutions.</p>
 
-<footer>&copy; 2026 ABC Technologies. All rights reserved.</footer>
+    <!-- Mission / Vision / Values -->
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Mission</h3>
+        <p>Deliver dependable technology solutions that help businesses grow, scale, and operate with confidence in a connected world.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔭</div>
+        <h3>Vision</h3>
+        <p>To be the most trusted technology partner for enterprises globally — synonymous with reliability, innovation, and impact.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💡</div>
+        <h3>Values</h3>
+        <p>Integrity in every engagement, continuous innovation, and a relentless customer-first engineering philosophy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="section" style="background: var(--bg-secondary); padding-top: 4rem; padding-bottom: 4rem;">
+  <div class="section-inner">
+    <div class="section-label">Our History</div>
+    <h2 class="section-title">Company Timeline</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="year">2005</div>
+        <h3>Founded in Chennai</h3>
+        <p>ABC Technologies established with a team of 12 engineers, focused on enterprise web development.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2010</div>
+        <h3>100 Clients Milestone</h3>
+        <p>Expanded to Bengaluru and Hyderabad; reached 100 enterprise clients across finance and healthcare sectors.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2015</div>
+        <h3>Cloud Practice Launch</h3>
+        <p>Launched dedicated cloud and DevOps consulting practice; partnerships with AWS and Azure.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2020</div>
+        <h3>Global Expansion</h3>
+        <p>Opened offices in Singapore and London; served 400+ clients across 15 countries.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2026</div>
+        <h3>500+ Clients &amp; 1200+ Projects</h3>
+        <p>Industry-leading 99.9% uptime SLA, a team of 800+ engineers, and a full-stack DevOps platform offering.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Leadership -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Leadership</div>
+    <h2 class="section-title">Meet the Team</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">👤</div>
+        <h3>Arjun Mehta</h3>
+        <p>Founder &amp; CEO — 20+ years in enterprise software. Previously VP Engineering at Infosys Technologies.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👤</div>
+        <h3>Priya Nair</h3>
+        <p>CTO — Cloud architect and DevOps pioneer. Holds AWS and GCP professional certifications.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👤</div>
+        <h3>Ravi Shankar</h3>
+        <p>VP Engineering — Leads a team of 500+ developers across India, Singapore, and London offices.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">ABC Technologies</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="careers.html">Careers</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-copy">&copy; 2026 ABC Technologies. All rights reserved.</div>
+</footer>
+
 <script src="js/main.js"></script>
 </body>
 </html>

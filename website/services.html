@@ -1,43 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services - ABC Technologies</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ABC Technologies services — web development, cloud migration, DevOps consulting, managed IT, cybersecurity, and data analytics.">
+  <title>Services — ABC Technologies</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header>
+
+<header id="site-header">
   <div class="logo">ABC Technologies</div>
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="careers.html">Careers</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="index.html" id="nav-home">Home</a></li>
+      <li><a href="about.html" id="nav-about">About Us</a></li>
+      <li><a href="services.html" id="nav-services">Services</a></li>
+      <li><a href="careers.html" id="nav-careers">Careers</a></li>
+      <li><a href="gallery.html" id="nav-gallery">Gallery</a></li>
+      <li><a href="contact.html" id="nav-contact">Contact Us</a></li>
     </ul>
   </nav>
 </header>
 
-<section class="hero">
-  <h1>Our Services</h1>
-  <p>End-to-end technology solutions tailored to your business.</p>
+<section class="page-hero">
+  <div class="section-label">What We Do</div>
+  <h1><span class="gradient-text">Our Services</span></h1>
+  <p>End-to-end technology solutions tailored to your business — from code to cloud to continuous monitoring.</p>
 </section>
 
-<main>
-  <div class="card-grid">
-    <div class="card"><h3>Web & App Development</h3><p>Modern, responsive applications built on proven frameworks.</p></div>
-    <div class="card"><h3>Cloud Migration</h3><p>Move workloads to the cloud with zero-downtime strategies.</p></div>
-    <div class="card"><h3>DevOps Consulting</h3><p>CI/CD, containerization, and Kubernetes orchestration.</p></div>
-    <div class="card"><h3>Managed IT Infrastructure</h3><p>24/7 monitoring, patching, and support.</p></div>
-    <div class="card"><h3>Cybersecurity</h3><p>Threat assessment, hardening, and compliance support.</p></div>
-    <div class="card"><h3>Data & Analytics</h3><p>Dashboards and pipelines that turn data into decisions.</p></div>
-  </div>
-</main>
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Core Offerings</div>
+    <h2 class="section-title">Full-Stack Technology Expertise</h2>
+    <p class="section-desc">We deliver across the complete technology stack — development, infrastructure, security, and data.</p>
 
-<footer>&copy; 2026 ABC Technologies. All rights reserved.</footer>
+    <div class="card-grid" id="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h3>Web &amp; App Development</h3>
+        <p>Modern, responsive applications built on proven frameworks — React, Node.js, Java Spring, and cloud-native microservices.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">☁️</div>
+        <h3>Cloud Migration</h3>
+        <p>Move your workloads to AWS, Azure, or GCP with zero-downtime migration strategies and robust rollback plans.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h3>DevOps Consulting</h3>
+        <p>CI/CD pipeline design with Jenkins, GitLab CI, or GitHub Actions; Docker containerisation; Kubernetes orchestration.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🖥️</div>
+        <h3>Managed IT Infrastructure</h3>
+        <p>24/7 monitoring, patch management, incident response, and performance tuning so your systems never skip a beat.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔐</div>
+        <h3>Cybersecurity</h3>
+        <p>Threat modelling, penetration testing, network hardening, and compliance audits — ISO 27001, SOC 2, GDPR.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>Data &amp; Analytics</h3>
+        <p>Business intelligence dashboards with Grafana and Power BI, ETL pipelines, and ML-driven insights for decision-makers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process Section -->
+<section class="section" style="background: var(--bg-secondary); padding-top: 4rem; padding-bottom: 4rem;">
+  <div class="section-inner">
+    <div class="section-label">How We Work</div>
+    <h2 class="section-title">Our Delivery Process</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon" style="background: rgba(0,200,255,0.1); border-color: rgba(0,200,255,0.2);">01</div>
+        <h3>Discovery &amp; Planning</h3>
+        <p>We deeply understand your requirements, constraints, and success metrics before writing a single line of code.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background: rgba(0,200,255,0.1); border-color: rgba(0,200,255,0.2);">02</div>
+        <h3>Design &amp; Architecture</h3>
+        <p>System design with scalability, security, and maintainability as first-class requirements — not afterthoughts.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background: rgba(0,200,255,0.1); border-color: rgba(0,200,255,0.2);">03</div>
+        <h3>Agile Delivery</h3>
+        <p>Two-week sprints, daily stand-ups, continuous integration, and rigorous code review at every step.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background: rgba(0,200,255,0.1); border-color: rgba(0,200,255,0.2);">04</div>
+        <h3>Deploy &amp; Monitor</h3>
+        <p>Automated deployment pipelines and production monitoring ensure reliable, observable releases every time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">ABC Technologies</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="careers.html">Careers</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-copy">&copy; 2026 ABC Technologies. All rights reserved.</div>
+</footer>
+
 <script src="js/main.js"></script>
 </body>
 </html>
