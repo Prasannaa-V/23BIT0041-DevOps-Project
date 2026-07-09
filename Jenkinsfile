@@ -39,12 +39,10 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 echo 'Deploying to Kubernetes cluster...'
-                withKubeConfig([credentialsId: 'kubeconfig']) {
-                    sh 'kubectl apply -f k8s/deployment.yaml'
-                    sh 'kubectl apply -f k8s/service.yaml'
-                    sh 'kubectl set image deployment/abc-website abc-website=$DOCKER_IMAGE:$IMAGE_TAG'
-                    sh 'kubectl rollout status deployment/abc-website'
-                }
+                sh 'kubectl apply -f k8s/deployment.yaml'
+                sh 'kubectl apply -f k8s/service.yaml'
+                sh 'kubectl set image deployment/abc-website abc-website=abc-website:latest'
+                sh 'kubectl rollout status deployment/abc-website'
             }
         }
 
