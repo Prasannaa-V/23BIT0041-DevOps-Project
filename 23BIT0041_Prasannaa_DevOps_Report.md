@@ -191,15 +191,18 @@ curl http://localhost:8081/health
 
 Open http://localhost:8081 in your browser.
 
-**[SCREENSHOT PLACEHOLDER: Browser showing the ABC Technologies website at http://localhost:8081]**
+![Browser showing the ABC Technologies website](website_homepage.png)
 
 ### 5.5 Docker Container Status
 
 ```bash
-docker ps
+docker ps --filter "name=abc-website-test"
 ```
 
-**[SCREENSHOT PLACEHOLDER: Terminal showing docker ps with abc-website-test RUNNING]**
+```
+CONTAINER ID   IMAGE               COMMAND                  CREATED        STATUS                  PORTS                                     NAMES
+fd0464762a59   abc-website:local   "/docker-entrypoint.…"   15 hours ago   Up 15 hours (healthy)   0.0.0.0:8081->80/tcp, [::]:8081->80/tcp   abc-website-test
+```
 
 ---
 
@@ -250,13 +253,11 @@ pipeline {
 }
 ```
 
-**[SCREENSHOT PLACEHOLDER: Jenkins Dashboard — Pipeline Job overview]**
+![Jenkins Dashboard](jenkins_dashboard.png)
 
-**[SCREENSHOT PLACEHOLDER: Jenkins Job Configuration — SCM settings, pipeline script path]**
+![Jenkins Job Configuration](jenkins_job_configure.png)
 
-**[SCREENSHOT PLACEHOLDER: Jenkins Console Output — all 5 stages shown GREEN]**
-
-**[SCREENSHOT PLACEHOLDER: Jenkins Successful Build — Build #N with green checkmark]**
+*Note: SCM checkout from main branch is configured, and credentials mapping for dockerhub-creds and kubeconfig have been registered.*
 
 ---
 
@@ -301,28 +302,23 @@ kubectl get pods -l app=abc-website
 kubectl get svc abc-website-service
 ```
 
-**Expected output:**
 ```
 NAME                           READY   STATUS    RESTARTS   AGE
-abc-website-<hash>-<suffix>   1/1     Running   0          30s
-abc-website-<hash>-<suffix>   1/1     Running   0          30s
+abc-website-5649d77556-bdlfw   1/1     Running   0          11m
+abc-website-5649d77556-zp5fx   1/1     Running   0          11m
 
-NAME                  TYPE       CLUSTER-IP      PORT(S)        AGE
-abc-website-service   NodePort   10.96.xxx.xxx   80:30080/TCP   30s
+NAME                  TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+abc-website-service   NodePort   10.109.21.172   <none>        80:30080/TCP   12m
 ```
 
 ### 8.4 Access the Application
 
 ```bash
 minikube service abc-website-service --url
-# Returns something like: http://192.168.49.2:30080
+# Returns: http://192.168.49.2:30080
 ```
 
-**[SCREENSHOT PLACEHOLDER: Terminal — kubectl get pods showing 2x Running]**
-
-**[SCREENSHOT PLACEHOLDER: Terminal — kubectl get svc showing NodePort 30080]**
-
-**[SCREENSHOT PLACEHOLDER: Browser — website accessible via Minikube URL]**
+![Browser — website accessible via Minikube URL](kubernetes_website_homepage.png)
 
 ---
 
@@ -376,9 +372,9 @@ The dashboard at `http://localhost:3000` is **auto-provisioned** with 8 panels:
 - 📈 Network I/O (time series)
 - 📈 HTTP Availability Over Time (time series)
 
-**[SCREENSHOT PLACEHOLDER: Grafana dashboard showing all 8 panels with live data]**
+![Grafana Dashboard](grafana_dashboard.png)
 
-**[SCREENSHOT PLACEHOLDER: Graphite UI at http://localhost:8090 showing metric tree]**
+![Graphite UI](graphite_metrics.png)
 
 ---
 
@@ -388,8 +384,10 @@ The dashboard at `http://localhost:3000` is **auto-provisioned** with 8 panels:
 
 ```bash
 # Using Docker for simplicity:
-docker run -d --name nagios4 \
-  -p 8081:80 \
+docker run -d --name nagios \
+  -p 8082:80 \
+  -e NAGIOSADMIN_USER=nagiosadmin \
+  -e NAGIOSADMIN_PASS=nagios123 \
   jasonrivers/nagios:latest
 ```
 
@@ -397,7 +395,7 @@ docker run -d --name nagios4 \
 
 Copy the config file:
 ```bash
-docker cp monitoring/nagios/abc-website.cfg nagios4:/opt/nagios/etc/objects/abc-website.cfg
+docker cp monitoring/nagios/abc-website.cfg nagios:/opt/nagios/etc/objects/abc-website.cfg
 ```
 
 Register it in `nagios.cfg`:
@@ -405,13 +403,13 @@ Register it in `nagios.cfg`:
 cfg_file=/opt/nagios/etc/objects/abc-website.cfg
 ```
 
-Update `address` in `abc-website.cfg` to your host IP (e.g., `127.0.0.1`).
+Update `address` in `abc-website.cfg` to your host IP (or container IP e.g. `172.17.0.3` / port `80`).
 
 ### 10.3 Reload Nagios
 
 ```bash
-docker exec nagios4 /opt/nagios/bin/nagios -v /opt/nagios/etc/nagios.cfg
-docker restart nagios4
+docker exec nagios /opt/nagios/bin/nagios -v /opt/nagios/etc/nagios.cfg
+docker restart nagios
 ```
 
 ### 10.4 Nagios Checks Configured
@@ -419,20 +417,20 @@ docker restart nagios4
 | Check | Description |
 |-------|-------------|
 | PING | Host reachability (ICMP) |
-| HTTP Website Availability | `check_http` on `/health` endpoint (port 8081) |
+| HTTP Website Availability | `check_http` on `/health` endpoint (port 80) |
 
 ### 10.5 Verify in Nagios UI
 
-Access http://localhost:8081/nagios (or the mapped port).
+Access http://localhost:8082/nagios
 
 **Expected Status:**
 - Host: **UP** ✅
 - HTTP Website Availability: **OK** ✅
 - PING: **OK** ✅
 
-**[SCREENSHOT PLACEHOLDER: Nagios web UI — Host showing UP status]**
+![Nagios web UI — Host showing UP status](nagios_host_status.png)
 
-**[SCREENSHOT PLACEHOLDER: Nagios web UI — Services showing HTTP OK and PING OK]**
+![Nagios web UI — Services showing HTTP OK and PING OK](nagios_services_status.png)
 
 ---
 
