@@ -30,6 +30,7 @@ pipeline {
                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
                 sh 'docker push $DOCKER_IMAGE:$IMAGE_TAG'
                 sh 'docker push $DOCKER_IMAGE:latest'
+                sh 'docker logout'
             }
         }
 
@@ -59,9 +60,6 @@ pipeline {
         }
         failure {
             echo 'Pipeline failed. Check console output above.'
-        }
-        always {
-            sh 'docker logout'
         }
     }
 }
