@@ -191,7 +191,7 @@ curl http://localhost:8081/health
 
 Open http://localhost:8081 in your browser.
 
-![Browser showing the ABC Technologies website](website_homepage.png)
+**[SCREENSHOT PLACEHOLDER: Browser showing the ABC Technologies website at http://localhost:8081]**
 
 ### 5.5 Docker Container Status
 
@@ -253,11 +253,13 @@ pipeline {
 }
 ```
 
-![Jenkins Dashboard](jenkins_dashboard.png)
+**[SCREENSHOT PLACEHOLDER: Jenkins Dashboard — Pipeline Job overview]**
 
-![Jenkins Job Configuration](jenkins_job_configure.png)
+**[SCREENSHOT PLACEHOLDER: Jenkins Job Configuration — SCM settings, pipeline script path]**
 
-*Note: SCM checkout from main branch is configured, and credentials mapping for dockerhub-creds and kubeconfig have been registered.*
+**[SCREENSHOT PLACEHOLDER: Jenkins Console Output — all 5 stages shown GREEN]**
+
+**[SCREENSHOT PLACEHOLDER: Jenkins Successful Build — Build #N with green checkmark]**
 
 ---
 
@@ -318,7 +320,11 @@ minikube service abc-website-service --url
 # Returns: http://192.168.49.2:30080
 ```
 
-![Browser — website accessible via Minikube URL](kubernetes_website_homepage.png)
+**[SCREENSHOT PLACEHOLDER: Terminal — kubectl get pods showing 2x Running]**
+
+**[SCREENSHOT PLACEHOLDER: Terminal — kubectl get svc showing NodePort 30080]**
+
+**[SCREENSHOT PLACEHOLDER: Browser — website accessible via Minikube URL]**
 
 ---
 
@@ -372,9 +378,9 @@ The dashboard at `http://localhost:3000` is **auto-provisioned** with 8 panels:
 - 📈 Network I/O (time series)
 - 📈 HTTP Availability Over Time (time series)
 
-![Grafana Dashboard](grafana_dashboard.png)
+**[SCREENSHOT PLACEHOLDER: Grafana dashboard showing all 8 panels with live data]**
 
-![Graphite UI](graphite_metrics.png)
+**[SCREENSHOT PLACEHOLDER: Graphite UI at http://localhost:8090 showing metric tree]**
 
 ---
 
@@ -428,9 +434,9 @@ Access http://localhost:8082/nagios
 - HTTP Website Availability: **OK** ✅
 - PING: **OK** ✅
 
-![Nagios web UI — Host showing UP status](nagios_host_status.png)
+**[SCREENSHOT PLACEHOLDER: Nagios web UI — Host showing UP status]**
 
-![Nagios web UI — Services showing HTTP OK and PING OK](nagios_services_status.png)
+**[SCREENSHOT PLACEHOLDER: Nagios web UI — Services showing HTTP OK and PING OK]**
 
 ---
 
