@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
         - name: abc-website
-          image: Prasannaa-V/abc-technologies-website:latest
+          image: abc-website:latest
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
           resources:
