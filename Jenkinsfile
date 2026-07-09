@@ -26,11 +26,13 @@ pipeline {
 
         stage('Push to Docker Hub') {
             steps {
-                echo 'Logging in and pushing image to Docker Hub...'
-                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-                sh 'docker push $DOCKER_IMAGE:$IMAGE_TAG'
-                sh 'docker push $DOCKER_IMAGE:latest'
-                sh 'docker logout'
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    echo 'Logging in and pushing image to Docker Hub...'
+                    sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+                    sh 'docker push $DOCKER_IMAGE:$IMAGE_TAG'
+                    sh 'docker push $DOCKER_IMAGE:latest'
+                    sh 'docker logout'
+                }
             }
         }
 
